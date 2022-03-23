@@ -43,12 +43,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites', # new
+    'allauth', # new
+    'allauth.account', # new
+    'allauth.socialaccount', # new
     'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth.registration', # new
+    'rest_auth',
     'bootstrap4',
     'bootstrap_datepicker_plus',
     'users','posts',
     'api',
 ]
+
+SITE_ID = 1
+
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -62,7 +72,11 @@ AUTH_USER_MODEL ='users.CustomUser'
 REST_FRAMEWORK = {
         'DEFAULT_PERMISSION_CLASSES':[
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
-        ]
+        ],
+        'DEFAULT_AUTHENTICATION_CLASSES' : [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        ],
 }
 
 MIDDLEWARE = [

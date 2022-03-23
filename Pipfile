@@ -12,6 +12,8 @@ django-bootstrap4 = "*"
 django-bootstrap-datepicker-plus = "*"
 django-environ = "*"
 djangorestframework = "*"
+django-rest-auth = "*"
+django-allauth = "*"
 
 [dev-packages]
 
