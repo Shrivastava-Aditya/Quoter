@@ -43,9 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'bootstrap4',
     'bootstrap_datepicker_plus',
     'users','posts',
+    'api',
 ]
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
@@ -57,6 +59,11 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 SIGNUP_REDIRECT_URL = 'home'
 AUTH_USER_MODEL ='users.CustomUser'
+REST_FRAMEWORK = {
+        'DEFAULT_PERMISSION_CLASSES':[
+        'rest_framework.permissions.AllowAny',
+        ]
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
