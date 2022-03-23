@@ -61,7 +61,7 @@ SIGNUP_REDIRECT_URL = 'home'
 AUTH_USER_MODEL ='users.CustomUser'
 REST_FRAMEWORK = {
         'DEFAULT_PERMISSION_CLASSES':[
-        'rest_framework.permissions.AllowAny',
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
         ]
 }
 
