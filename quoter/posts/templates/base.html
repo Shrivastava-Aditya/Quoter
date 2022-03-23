@@ -1,20 +1,12 @@
-<!-- tweets/templates/base.html -->
-<html>
-  <head>
-    <title>Quoter</title>
-  </head>
-  <body>
-    <header>
-      <div class="nav-left">
-        <h1><a href="{% url 'home' %}">Quoter</a></h1>
-      </div>
-      <div class="nav-right">
-        <a href="{% url 'post_new' %}">Add Quote</a>
-      </div>
-    </header>
+{% extends 'base.html' %}
 
-    <div>
-    {% block content %} {% endblock content %}
+{% block content %}
+  {% for post in object_list %}
+    <div class="card" >
+      <div class="card-body">
+        <h5 class="card-title">{{ post.body }}</h5>
+        <p class="card-text">{{ post.user }}</p>
+      </div>
     </div>
-  </body>
-</html>
+  {% endfor %}
+{% endblock content %}
