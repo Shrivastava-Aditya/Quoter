@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import environ
+
+env = environ.Env()
+
+environ.Env.read_env()
 # import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -42,7 +47,15 @@ INSTALLED_APPS = [
     'bootstrap_datepicker_plus',
     'users','posts',
 ]
-
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = ('GMAIL_USERNAME')
+EMAIL_HOST_PASSWORD = ('GMAIL_PASSWORD')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+SIGNUP_REDIRECT_URL = 'home'
 AUTH_USER_MODEL ='users.CustomUser'
 
 MIDDLEWARE = [
@@ -118,8 +131,6 @@ USE_I18N = True
 USE_TZ = True
 
 BOOTSTRAP4 = { 'include_jquery' : True}
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
