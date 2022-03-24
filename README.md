@@ -9,3 +9,4 @@ It keeps a record of all your quotes.
 2. HTML 
 3. django-bootstrap
 4. DRF django
+5. OAuth (will be adding)
