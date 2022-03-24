@@ -1,5 +1,5 @@
 # Quoter
-An experimental project made on django 4.0 to learn how REST API works in django
+An experimental project made on django 4.0 to learn how REST API and authorisation works in django
 
 ### What it does?
 It keeps a record of all your quotes. 
